@@ -11,3 +11,9 @@ $("form").on("submit", function(e){
   // console.log(noteText);
   newNote(noteText);
 });
+
+var displayNotes = function(){
+  $.getJSON("/notes", function(response){
+    console.log(response);
+  });
+};

@@ -3,6 +3,11 @@ class NotesController < ApplicationController
 
   end
 
+  def allnotes
+    @notes = Note.all
+    render json: @notes
+  end
+
   def create
     # binding.pry
     @note = Note.create(description: params[:description], completed: false)
@@ -10,6 +15,7 @@ class NotesController < ApplicationController
   end
 
   def update
+
   end
 
   def destroy
