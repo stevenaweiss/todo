@@ -15,10 +15,15 @@ class NotesController < ApplicationController
   end
 
   def update
-
+    @note = Note.find(params[:id])
+    @note.update(completed: params[:completed])
+    render json: @notes
   end
 
   def destroy
+    @note = Note.find(params[:id])
+    @note.destroy
+    render json: @notes
   end
 
 end
